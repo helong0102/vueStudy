@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <script src="./js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="root">
+    <!--遍历数组-->
+    <p v-for="item in list">{{item}}</p>
+    <br>
+    <!--遍历数组对象-->
+    <p v-for="(item,index) in listObj">{{item.id}}--{{item.name}}--{{index}}</p>
+    <br>
+    <!--遍历对象-->
+    <p v-for="(key,value,index) in obj">{{key}}--{{value}}--{{index}}</p>
+    <br>
+    <!--遍历数字-->
+    <p v-for="item in 4">{{item}}</p>
+
+</div>
+
+</body>
+<script>
+    new Vue({
+        el:"#root",
+        data:{
+            list:["fmjava","hel","qq"],
+            listObj:[
+                {id:1,name:'zs1'},
+                {id:2,name:'zs2'},
+                {id:3,name:'zs3'},
+                {id:4,name:'zs4'},
+                {id:5,name:'zs5'},
+            ],
+            obj:{id:1,name:'zs',age:10}
+        }
+    })
+</script>
+</html>
