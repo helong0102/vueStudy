@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按键修饰符</title>
+    <script src="./js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="root">
+    <input type="text" name="keyword" @keydown.enter="keydownEnter()">
+    <input type="text" name="keyword" @keydown.tab="keydownTab()">
+    <input type="text" name="keyword" @keydown.delete="keydownDelete()">
+    <input type="text" name="keyword" @keydown.esc="keydownEsc()">
+    <input type="text" name="keyword" @keydown.space="keydownSpace()">
+    <input type="text" name="keyword" @keydown.up="keydownUp()">
+    <input type="text" name="keyword" @keydown.down="keydownDown()">
+    <input type="text" name="keyword" @keydown.left="keydownLeft()">
+    <input type="text" name="keyword" @keydown.right="keydownRight()">
+
+</div>
+
+</body>
+<script>
+    // 初始化vue对象
+    new Vue({
+        // 初始化vue根节点
+        el:"#root",
+        // 定义页面使用的模型数据js变量
+        data:{
+
+
+        },
+        // 定义方法
+        methods:{
+            keydownEnter:function () {
+                alert("按了Enter键。");
+            },
+            keydownTab:function () {
+                alert("按了Tab键盘");
+            },
+            keydownDelete:function () {
+                alert("按了Delete键");
+            },
+            keydownEsc:function () {
+                alert("按了Esc键");
+            },
+            keydownSpace:function () {
+                alert("按了Space键");
+            },
+            keydownUp:function () {
+                alert("按了Delete键");
+            },
+            keydownDown:function () {
+                alert("按了Up键");
+            },
+            keydownLeft:function () {
+                alert("按了Left键");
+            },
+            keydownRight:function () {
+                alert("按了Right键");
+            }
+        }
+    })
+
+</script>
+
+</html>
