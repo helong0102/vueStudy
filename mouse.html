@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标事件</title>
+    <script src="./js/vuejs-2.5.16.js"></script>
+    <style>
+        #testdiv{
+            margin-left: 100px;
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="root">
+    <div id="testdiv" @mousemove="onMouseMove($event)">
+    X:{{X}},Y:{{Y}}
+    </div>
+    </div>
+
+    </body>
+    <script>
+    new Vue({
+        el:"#root",
+        data:{
+            X:0,
+            Y:0
+        },
+        methods:{
+            onMouseMove:function (event) {
+                // 获取鼠标位置
+                this.X = event.x;
+                this.Y = event.y;
+            }
+        }
+    })
+
+</script>
+</html>
