@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <!--1.在页面中引入vue的js文件。-->
+    <script src="./js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<!--2.在页面中定义一个根节点。一般就是div-->
+<div id="root">
+    <input type="text" @keydown="onkeydown($event)">
+    <br>
+    code : {{code}}
+
+</div>
+
+
+</body>
+<!--3.在js代码中初始化一个vue对象，基于上面的根节点初始化。-->
+<script>
+    //初始化Vue对象
+    new Vue({
+        //初始化vue对象的根节点
+        el:"#root",
+        //定义页面使用的模型数据js变量
+        data:{
+            code:0
+        },
+        methods:{
+            onkeydown:function (event) {
+                var keycode = event.keyCode;
+                this.code = keycode;
+                if (this.code == 13){
+                    alert("按了回车键！");
+                }
+            }
+
+        }
+    });
+</script>
+
+
+</html>
