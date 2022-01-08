@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件修饰符</title>
+    <script src="./js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="root">
+    <a href="http://www.baidu.com">普通a标签</a>
+    <br>
+    <a href="http://www.baidu.com" @click="onClick($event)">传统阻止默认事件</a>
+    <br>
+    <a href="http://www.baidu.com" @click.prevent="aClick($event)">事件修饰符</a>
+    <hr>
+    <div style="height: 100px; width:100px; background: red;" @click="divClick()">
+        <a href="http://www.baidu.com" @click.prevent.stop="aClick()">事件冒泡(点击)</a>
+    </div>
+
+</div>
+
+</body>
+<script>
+    new Vue({
+        el:"#root",
+        data:{
+
+
+        },
+        methods:{
+            onClick:function (event) {
+                alert("点击了a标签(百度网页)链接");
+                // 传统阻止默认事件
+                event.preventDefault();
+            },
+            aClick:function (event) {
+                alert("点击了a标签(百度网页)链接");
+            },
+            divClick:function () {
+                alert("点击了a标签")
+            }
+        }
+    })
+
+</script>
+</html>
