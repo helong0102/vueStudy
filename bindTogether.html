@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+    <script src="./js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="root">
+    <input type="text" v-model="message">
+    {{message}}<br>
+    <button @click="bClick()">点击修改</button>
+</div>
+
+
+</body>
+
+<script>
+    new Vue({
+        el:"#root",
+        data:{
+            message:"testData"
+        },
+        methods:{
+            bClick:function () {
+                this.message = "clickData"
+            }
+        }
+    })
+</script>
+</html>
