@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生命周期</title>
+    <script src="./js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="root">
+
+    {{message}}
+    <button @click="changeData()">修改数据</button>
+    <button @click="destory()">销毁Vue对象</button>
+
+</div>
+
+</body>
+<script>
+    var vu = new Vue({
+        el:"#root",
+        data:{
+            message:"fmjava"
+        },
+        methods:{// 自定义方法
+            changeData:function () {
+                this.message = "new fmjava";
+            },
+            destory:function () {
+                vu.$destroy();
+            }
+        },
+        // 生命周期方法
+        beforeCreate:function(){
+            console.log("创建Vue对象前调用")
+            console.log(this.$el)
+            console.log(this.$data)
+            console.log(this.message)
+        },
+        created:function(){
+            console.log("创建Vue对象后调用")
+            console.log(this.$el)
+            console.log(this.$data)
+            console.log(this.message)
+        },
+        beforeMount:function(){
+            console.log("当数据绑定到页面之前")
+            console.log(this.$el)
+            console.log(this.$data)
+            console.log(this.message)
+        },
+        mounted:function(){
+            console.log("当数据绑定到页面之后")
+            console.log(this.$el)
+            console.log(this.$data)
+            console.log(this.message)
+        },
+        beforeUpdate:function () {
+            console.log("当页面数据跟新之前")
+        },
+        beforeUpdate:function () {
+            console.log("当页面数据跟新之后")
+        },
+        beforeDestroy:function(){
+            console.log("销毁vue对象之前")
+        },
+        destroyed:function () {
+            console.log("Vue对象销毁之后")
+        }
+    })
+
+</script>
+</html>
