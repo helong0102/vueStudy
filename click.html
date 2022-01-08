@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单击事件绑定</title>
+    <!--1.在页面中引入vue的js文件。-->
+    <script src="./js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<!--2.在页面中定义一个根节点。一般就是div-->
+<div id="root">
+    <input type="text" v-model="message">
+    <h1>{{message}}</h1>
+    <!--点击按钮-->
+    <button v-on:click="onclick()">点击按钮1</button>
+    <button @click="onclick()">点击按钮2</button>
+
+</div>
+
+
+</body>
+<!--3.在js代码中初始化一个vue对象，基于上面的根节点初始化。-->
+<script>
+    //初始化Vue对象
+    new Vue({
+        //初始化vue对象的根节点
+        el:"#root",
+        //定义页面使用的模型数据js变量
+        data:{
+            message:"hello vue!"
+        },
+        methods:{
+            /*点击事件*/
+            onclick:function () {
+                this.message = "new Hello World!";
+            }
+        }
+    });
+</script>
+
+
+</html>
