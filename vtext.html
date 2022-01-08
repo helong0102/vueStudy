@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-text</title>
+    <script src="./js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="root">
+    <div>{{content}}</div>
+    <div v-text="content"></div>
+    <div v-html="content"></div>
+
+</div>
+
+</body>
+<script>
+    new Vue({
+        el:"#root",
+        data:{
+            content:"<h1>abc</h1>"
+        },
+        methods:{
+
+        }
+    })
+</script>
+</html>
