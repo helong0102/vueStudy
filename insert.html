@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插值</title>
+    <script src="./js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="root">
+    {{1+2}}<br>
+    {{'aaa'+'123'}}<br>
+    {{num+1}}<br>
+    {{3>2?true:false}}<br>
+    {{user.username}}
+</div>
+
+</body>
+<script>
+    new Vue({
+        el:"#root",
+        data:{
+            num:100,
+            user:{username:"HeLong",password:"1234"}
+        },
+        methods:{
+
+
+        }
+    })
+
+
+</script>
+</html>
